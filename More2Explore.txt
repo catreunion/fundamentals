@@ -1,0 +1,20 @@
+GitHub flow Guide
+https://guides.github.com/introduction/flow/
+
+Mastering Markdown
+https://guides.github.com/features/mastering-markdown/
+
+GitHub Explore
+https://github.com/explore
+
+YouTube Channel
+https://www.youtube.com/githubguides
+
+On-Demand Training
+https://lab.github.com/
+
+You can use emoji onto comments and Pull Requests.
+https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#using-emoji
+
+You can drag and drop images and gifs onto comments and Pull Requests.
+https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/attaching-files
