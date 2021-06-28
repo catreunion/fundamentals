@@ -1,0 +1,116 @@
+https://towardsdatascience.com/how-to-use-git-github-with-jupyter-notebook-7144d6577b44
+How to use Git / GitHub with Jupyter Notebook
+Amit Rathi
+Jupyter users
+ It’s a hands on tutorial & is meant to be comprehensive. Feel free to skip a section if you are already familiar with the steps. At the end you’ll be able to,
+
+    Push your notebooks to a GitHub repository
+    Start versioning your notebooks + learn how to revert to a specific version
+    Get feedback & discuss notebook changes with your peers
+    Easily share your notebooks for others to view
+
+    Setup your name & email in git by running following commands on terminal —
+    Connect your local git client with GitHub by caching your password.
+
+Create New Repository
+
+A GitHub repository is like your supercharged folder in the cloud. You can store files (notebooks, data, source code),
+look at historical changes to these files, open issues, discuss changes and much more.
+People typically create one repository per project.
+
+Clone Repository
+
+clone the GitHub repository on our machine
+create projectA directory on our machine which is linked to amit1rrr/projectA repository on GitHub. Replace https://github.com/amit1rrr/projectA.git with your own repository URL from the above step —
+>> git clone https://github.com/amit1rrr/projectA.git
+
+Push Notebooks to GitHub
+
+Our repository is empty right now, let’s push some notebooks to it. We copy two notebooks to the directory where we cloned projectA repository,
+
+>> cp /some/path/analysis1.ipynb /path/of/projectA/
+>> cp /some/path/scratch.ipynb /path/of/projectA/
+
+Let’s say we want to push analysis1.ipynbto GitHub. We first need to tell local git client to start tracking the file —
+
+You can check which files are being tracked with git status,
+
+You can see that analysis1.ipynb is under “Changes to be committed” so it’s being tracked by our local git client. Now let’s commit the changes —
+
+# -m flag provides a human friendly message describing the change
+>> git commit -m "Adds customer data analysis notebook"
+
+Commit simply creates a checkpoint (or version) that you can revert back to at any time. Now finally push this commit to GitHub —
+
+>> git push
+
+Now you can visit the repository page on GitHub (use your own repositoryURL) & see your commits.
+/////////////////////////////
+Develop in a Branch
+
+Let’s say you are working on a large project spanning multiple days but you want to periodically push work in progress checkpoints (“commits”).
+The way you do that is by creating a feature branch. Each repository has a default branch (typically called “master”) that
+stores most up-to-date versions of completed work. Each member of your team can create their own feature branches to store their WIP commits.
+When their work in a feature branch is ready to be shared they can create a pull request for peer review & subsequently merge the feature branch into master.
+Let’s unpack that with concrete steps.
+
+working on a new project to analyse customer data.
+>> git checkout -b customer_data_insights
+
+Then I’ll create/edit some notebooks & other files to do the actual analysis.
+When I’m ready to commit my WIP, I’ll do
+the usual git add, git commit, git push shown earlier. At git push you will see following error since the branch does not exist on GitHub yet.
+
+Simply push the branch first by copying the command shown in error,
+
+>> git push --set-upstream origin customer_data_insights
+
+And then do git push to push your commits to this newly created branch.
+
+Create Pull Request
+
+    Let’s say you’ve been working on feature branch for a while and it’s ready for peer review. That’s what pull requests are for.
+
+You can create pull requests from GitHub UI. Go to your Project page -> Pull requests tab -> click “New pull request”.
+
+Choose which branch you’d like to merge into master. Verify commits & list of files changed. Click “Create pull request”.
+
+On the next page, provide title & describe your changes in brief, click “Create pull request”.
+
+Review Notebook Pull Request
+
+GitHub pull request are fantastic for peer review as they let you see changes side-by-side & comment on them.
+But in case of Jupyter, GitHub shows JSON diffs which are really hard to read (see below).
+
+Notebook Diffs on GitHub
+
+    You can use ReviewNB to solve the notebook diff’ing problem. It shows you rich diffs & lets you comment on any notebook cell to discuss changes with your team.
+
+Rich Diffs & Commenting in ReviewNB
+
+Once your changes are approved by teammates, you can merge them from GitHub UI.
+
+Or run git merge + git push from command line,
+
+Revert to a specific notebook version
+
+    If you want to temporarily go back to a commit, checkout the files, and come back to where you are then you can simply checkout the desired commit.
+    At the end run “git checkout master” to go back to the current state.
+
+If you want to actually revert to an old state and make some changes there, you can start a new branch from that commit —
+
+>> git checkout -b old-state f33939cd63004e3e67b111f7bcb350ffd2b0608a
+
+You can also browse old commits on GitHub by going to Your project page -> Commits. Open the desired commit and click “View File” to see the notebook status at that commit.
+
+When you browse notebooks in your repository on GitHub it renders them as HTML. So it’s very convenient to share read-only links to the notebook like this one. If it’s a private repository, the person you are sharing the link with needs to have a GitHub account and have permission to access your repository.
+
+    For security reasons, GitHub does not run any Javascript in the notebook. You can use
+    nbviewer or ReviewNB if your notebook contains interactive widgets.
+
+Conclusion
+
+If you are new to Git, it can take some time to get used to all the commands. But it’s a proven way of collaborating on software projects & is
+widely used in data science work as well. You can combine it with ReviewNB to remove some of the kinks in the workflow.
+
+Happy Hacking!

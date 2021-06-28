@@ -1,3 +1,23 @@
+GitHub Pages    https://guides.github.com/features/pages
+GitHub Pages    Websites for your projects, hosted directly from your GitHub repository. Just edit, push, and your changes are live
+https://pages.github.com/
+GitHub Pages Documentation      https://docs.github.com/en/pages
+Setting up a GitHub Pages site with Jekyll  https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll
+Configuring a custom domain     https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+Generating a new SSH key and adding it to the ssh-agent
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+Git - Official Downloads
+https://git-scm.com/downloads
+
+Learn Git In 15 Minutes - YouTube
+https://youtu.be/USjZcfj8yxE
+https://www.notion.so/Introduction-to-Git-ac396a0697704709a12b6a0e545db049
+
+GitHub CLI | Take GitHub to the command line
+https://cli.github.com/
+
 GitHub flow Guide
 https://guides.github.com/introduction/flow/
 
@@ -7,14 +27,38 @@ https://guides.github.com/features/mastering-markdown/
 GitHub Explore
 https://github.com/explore
 
+GitHub Diffs & Commenting for Jupyter Notebooks
+https://www.reviewnb.com/
+
+nbviewer
+https://nbviewer.jupyter.org/
+
 YouTube Channel
 https://www.youtube.com/githubguides
 
 On-Demand Training
 https://lab.github.com/
 
+GitHub Gist
+https://gist.github.com/
+
+Git - Documentation
+https://git-scm.com/doc
+
+Pro Git book
+https://git-scm.com/book/en/v2
+
 You can use emoji onto comments and Pull Requests.
 https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#using-emoji
 
 You can drag and drop images and gifs onto comments and Pull Requests.
 https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/attaching-files
+
+GitHub Desktop | Simple collaboration from your desktop
+https://desktop.github.com/
+
+Zarko Maslaric - zarkom.net
+https://zarkom.net/blogs/how-to-install-git-and-git-bash-on-windows-9140
+==
+index.html
+git commit -m "index.html created in the main branch"
