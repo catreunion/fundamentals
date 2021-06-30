@@ -1,0 +1,102 @@
+gh pr create    # Create a pull request
+When the current branch isn't fully pushed to a git remote, a prompt will ask
+where to push the branch and offer an option to fork the base repository.
+Use --head to explicitly skip any forking or pushing behavior.
+
+--fill to autofill these values from git commits.
+
+Link an issue to the pull request by referencing the issue in the body of the pull request.
+If the body text mentions Fixes #123 or Closes #123, the referenced issue will automatically get closed when the pull request gets merged.
+
+By default, users with write access to the base repository can push new commits to the head branch of the pull request.
+Disable this with --no-maintainer-edit.
+
+$ gh pr create --title "The bug is fixed" --body "Everything works again"
+$ gh pr create --reviewer monalisa,hubot  --reviewer myorg/team-name
+$ gh pr create --project "Roadmap"
+$ gh pr create --base develop --head monalisa:feature
+
+$ gh pr create --web
+Warning: 1 uncommitted change
+Opening github.com/catreunion/fundamentals/compare/master...0624 in your browser.
+Options
+
+  -a, --assignee login       Assign people by their login. Use "@me" to self-assign.
+  -B, --base branch          The branch into which you want your code merged
+  -b, --body string          Body for the pull request
+  -F, --body-file file       Read body text from file
+  -d, --draft                Mark pull request as a draft
+  -f, --fill                 Do not prompt for title/body and just use commit info
+  -H, --head branch          The branch that contains commits for your pull request (default: current branch)
+  -l, --label name           Add labels by name
+  -m, --milestone name       Add the pull request to a milestone by name
+      --no-maintainer-edit   Disable maintainer's ability to modify pull request
+  -p, --project name         Add the pull request to projects by name
+      --recover string       Recover input from a failed run of create
+  -r, --reviewer handle      Request reviews from people or teams by their handle
+  -t, --title string         Title for the pull request
+  -w, --web                  Open the web browser to create a pull request
+
+Options inherited from parent commands
+
+      --help                     Show help for command
+  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+
+$ gh pr create --title "The bug is fixed" --body "Everything works again"
+$ gh pr create --reviewer monalisa,hubot  --reviewer myorg/team-name
+$ gh pr create --project "Roadmap"
+$ gh pr create --base develop --head monalisa:feature
+
+$ gh pr create --web    # open the pull request creation page
+
+Working with forks
+This command will automatically create a fork for you if you're in a repository that you don't have permission to push to.
+
+
+gh pr merge
+Without an argument, the pull request that belongs to the current branch is selected.
+gh pr merge [<number> | <url> | <branch>] [flags]
+Options
+      --auto             Automatically merge only after necessary requirements are met
+  -b, --body text        Body text for the merge commit
+  -F, --body-file file   Read body text from file
+  -d, --delete-branch    Delete the local and remote branch after merge
+      --disable-auto     Disable auto-merge for this pull request
+  -m, --merge            Merge the commits with the base branch
+  -r, --rebase           Rebase the commits onto the base branch
+  -s, --squash           Squash the commits into one commit and merge it into the base branch
+Options inherited from parent commands
+      --help                     Show help for command
+  -R, --repo [HOST/]OWNER/REPO   Select another repository using the [HOST/]OWNER/REPO format
+==
+
+<link rel="stylesheet" href="bluestyle.css">
+
+<div><img src="img_hello_world.jpg" alt="Hello World from Space" style="width:100%;max-width:640px"></div>
+<div><img src="img_hello_git.jpg" alt="Hello Git" style="width:100%;max-width:640px"></div>
+
+creating a pull request:
+To keep the repo from getting overly complicated, you should delete the now unused branch by clicking "Delete branch".
+
+////////////////////////////////////////
+It is used for:
+    Tracking code changes
+    Tracking who made changes
+
+What does Git do?
+    Manage projects with Repositories
+    Clone a project to work on a local copy
+    Control and track changes with Staging and Committing
+    Branch and Merge to allow for work on different parts and versions of a project
+    Pull the latest version of the project to a local copy
+    Push local updates to the main project
+
+Working with Git
+    Initialize Git on a folder, making it a Repository
+    Git now creates a hidden folder to keep track of changes in that folder
+    When a file is changed, added or deleted, it is considered modified
+    You select the modified files you want to Stage
+    The Staged files are Committed, which prompts Git to store a permanent snapshot of the files
+    Git allows you to see the full history of every commit.
+    You can revert back to any previous commit.
+    Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit!
