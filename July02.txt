@@ -1,0 +1,53 @@
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   apache.conf.j2
+	modified:   freshserver.yml
+	modified:   inventory
+	modified:   roles/essentialapps/tasks/main.yml
+	modified:   variables.yml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	LAMP.yml
+	variables0.yml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add .
+$ git commit -m "Ready to create a branch for the LAMP role"
+[main 3dbe124] Ready to create a branch for the LAMP role
+ 7 files changed, 31 insertions(+), 16 deletions(-)
+ create mode 100644 LAMP.yml
+ create mode 100644 variables0.yml
+
+$ git lg
+* 3dbe124 - (HEAD -> main) Ready to create a branch for the LAMP role (7 seconds ago) <Cat Reunion>
+* 61a26ee - (origin/main, origin/HEAD) LAMP role added. Only contain Apache part (2 days ago) <Cat Reunion>
+* 6114bcd - sync test (9 days ago) <Isaac Li>
+* 49e3cf3 - A new role called SSH is added (10 days ago) <Cat Reunion>
+* 6a56f6d - Created roles of system update / essential apps / GUI apps / kid apps / ufw (11 days ago) <Cat Reunion>
+* 0805300 - Initial commit (12 days ago) <catreunion>
+
+$ git push
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 1.14 KiB | 581.00 KiB/s, done.
+Total 11 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To github.com:catreunion/ansible.git
+   61a26ee..3dbe124  main -> main
+
+$ git lg
+* 3dbe124 - (HEAD -> main, origin/main, origin/HEAD) Ready to create a branch for the LAMP role (2 minutes ago) <Cat Reunion>
+* 61a26ee - LAMP role added. Only contain Apache part (2 days ago) <Cat Reunion>
+* 6114bcd - sync test (9 days ago) <Isaac Li>
+* 49e3cf3 - A new role called SSH is added (10 days ago) <Cat Reunion>
+* 6a56f6d - Created roles of system update / essential apps / GUI apps / kid apps / ufw (11 days ago) <Cat Reunion>
+* 0805300 - Initial commit (12 days ago) <catreunion>

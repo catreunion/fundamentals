@@ -1,0 +1,79 @@
+15 Visual Studio Code Shortcuts You Should Know
+Brandon Burrus
+
+Mastering your keyboard can save you hours upon hours of time every week. Whether you’re working on that important project or
+trying to meet a deadline, knowing your shortcuts can be a massive difference maker. For Visual Studio Code, these are the
+essential shortcuts that everyone should know.
+
+1. Open Command Palette     Shift + Cmd + P
+ : The command palette will quickly become your best friend as you learn various shortcuts. If you ever
+ forget a shortcut, simply
+ open the command palette, and
+ search for what you’re trying to do.
+
+2. Find in current File     Cmd + F
+ : Instantly find whatever you’re looking for in the current file you’re in.
+ Pressing Alt at the same time will open the Find & Replace, and
+ pressing Enter will move your cursor to the next occurrence of the current search.
+
+3. Toggle Sidebar           Cmd + B
+
+4. Toggle Panel             Cmd + J
+ : Quick show and hide the bottom panel, this includes the Terminal, Output, Problems, and Debug Console.
+
+5. Find a File          Cmd + P
+ : Quickly search for a specific file in the current workspace. This one works really well in conjunction
+when opening and using the split editor.
+
+6. Focus Explorer       Shift + Cmd + E
+ : Similar to #3, except this shortcut will specifically toggle the Explorer every time.
+ Once the Explorer is focused, you can use J and K to move the cursor up and down, O will open and close folders,
+ and / will activate the Explorer-specific search filter.
+
+7. Global Find
+
+Shift + Cmd + F : Also similar to #3, but this one works for the Global Find sidebar panel.
+
+8. Focus Debugger
+
+Shift + Cmd + D : Another #3, except this one is for the Debugger sidebar. By default, VSCode binds most of the top-keyboard function keys to Debugger actions (e.g.: F5 to start, Shift + F5 to stop, F9 to create a breakpoint), but I highly recommend changing these, as the function keys can be awkward to reach sometimes.
+9. Focus Git
+
+Shift + Ctrl+ G : And one more #3, but this one is for Git. When you focus the Git sidebar, VSCode will put your cursor into the commit message field, so you can quickly commit any changes you have staged using Cmd + Enter. (By default, VSCode doesn’t have a shortcut to stage changes, I have mine bound to Shift + Cmd + A to Stage All Changes, and Shift + Cmd + S changed to Stage Current File)
+10. Move current line up or down
+
+Opt + Up / Opt + Down : Easily move the line that the cursor is currently at up or down. This also works if multiple lines are selected as well.
+11. Copy current line up or down
+
+Shift + Opt + Up / Shift + Opt + Down : Works exactly like #10, except it will copy lines instead of moving them.
+12. Focus/Split Editor
+
+Cmd + [1-9] and Cmd + \ : Using Cmd with any number will focus on that specific editor number. For example:
+Cmd + 2 will focus on the second editor, and if that specific editor window isn’t open, it will open an empty editor for you. If you want to split the current file into a second editor window, that’s what Cmd + \ does.
+
+13. Close Current Editor
+
+Cmd + W
+Closes the current editor that is currently focused. If you have the workbench.editor.closeEmptyGroups setting turned off, VSCode will leave an empty editor open for you (which Cmd + W will also close).
+
+14. Show Suggestion
+
+Ctrl + Space
+Forcing Intellisense to open can come in really useful, especially when trying to find specific settings while editing settings.json.
+
+15. Comment Selection
+
+Cmd + /
+Straightford, will comment out either the current selection or the line the cursor is currently on. This also
+works in reverse, in that it will also uncomment as well.
+
+Honorable Mention: Open Shortcuts
+
+Cmd + K + Cmd + S
+Opens the menu for changing Visual Studio Code’s default shortcuts. Any time you want
+to set a new shortcut or change an awkward one, this menu will quickly become your friend.
+
+Once you start to make an effort to learn the various shortcuts provided by VSCode, you’ll quickly realize
+just how much of your workflow can be easily achieved using a couple of key taps. It’s not to say that
+you’ll completely stop using your mouse altogether (although that is totally an option using the Vim extension),
+but that now you’ll no longer be so reliant on using it anymore.

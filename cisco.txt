@@ -1,0 +1,637 @@
+https://content.netdevgroup.com/contents/unhatched/400/
+
+<!-- 5
+ Listing Files
+
+The ls command is used to list the contents of a directory. You've already seen it used a few times before in examples,
+but this page will help ensure you are comfortable with its use.
+
+ls [OPTIONS] [FILE]
+
+By default, when the ls command is used with no options or arguments, it will list the files in the current directory:
+
+sysadmin@localhost:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+
+To learn the details about a file, such as the type of file, the permissions, ownerships or the timestamp, perform a long listing using the -l option to the ls command. Below, a listing of the /var/log directory is used as an example, since it provides a variety of output:
+
+sysadmin@localhost:~$ ls -l /var/log/
+total 844
+-rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log
+drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2
+drwxr-xr-x 1 root   root   4096 Dec 20  2017 apt
+-rw-r----- 1 syslog adm    1346 Oct  2 22:17 auth.log
+-rw-r--r-- 1 root   root  47816 Dec  7  2017 bootstrap.log
+-rw-rw---- 1 root   utmp      0 Dec  7  2017 btmp
+-rw-r----- 1 syslog adm     547 Oct  2 22:17 cron.log
+-rw-r----- 1 root   adm   85083 Dec 20  2017 dmesg
+-rw-r--r-- 1 root   root 325238 Dec 20  2017 dpkg.log
+-rw-r--r-- 1 root   root  32064 Dec 20  2017 faillog
+drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck
+-rw-r----- 1 syslog adm     106 Oct  2 19:57 kern.log
+-rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog
+-rw-r----- 1 syslog adm   19573 Oct  2 22:57 syslog
+drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart
+-rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp
+
+Each line corresponds to a file contained within the directory. The information can be broken down into fields separated by spaces. The fields are as follows:
+
+    File Type
+
+    -rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log
+
+    drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2
+
+    The first field actually contains ten characters, where the first character indicates the type of file and the next nine specify permissions. The file types are:
+    Symbol 	File Type 	Description
+    d 	directory 	A file used to store other files.
+    - 	regular file 	Includes readable files, images files, binary files, and compressed files.
+    l 	symbolic link 	Points to another file.
+    s 	socket 	Allows for communication between processes.
+    p 	pipe 	Allows for communication between processes.
+    b 	block file 	Used to communicate with hardware.
+    c 	character file 	Used to communicate with hardware.
+
+    The first file alternatives.log is a regular file -, while the second file apache2 is a directory d.
+
+    Permissions
+
+    drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart
+
+    Permissions indicate how certain users can access a file. Keep reading to learn more about permissions.
+
+    Hard Link Count
+
+    -rw-r----- 1 syslog adm    1346 Oct  2 22:17 auth.log
+
+    This number indicates how many hard links point to this file. Hard links are beyond the scope of this module, but are covered in the NDG Linux Essentials course.
+
+    User Owner
+
+    -rw-r----- 1 syslog adm     106 Oct  2 19:57 kern.log
+
+    User syslog owns this file. Every time a file is created, the ownership is automatically assigned to the user who created it.
+
+    Group Owner
+
+    -rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog
+
+    Indicates which group owns this file
+
+    File Size
+
+    -rw-r----- 1 syslog adm   19573 Oct  2 22:57 syslog
+
+    Directories and larger files may be shown in kilobytes since displaying their size in bytes would present a very large number. Therefore, in the case of a directory, it might actually be a multiple of the block size used for the file system. Block size is the size of a series of data stored in the filesystem.
+
+    Timestamp
+
+    drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck
+
+    This indicates the time that the file's contents were last modified.
+
+    Filename
+
+    -rw-r--r-- 1 root   root  47816 Dec  7  2017 bootstrap.log
+
+    The final field contains the name of the file or directory.
+
+    Consider This
+
+    In the case of symbolic links, a file that points to another file, the link name will be displayed along with an arrow and the pathname of the original file.
+
+    lrwxrwxrwx. 1 root root 22 Nov 6 2012 /etc/grub.conf -> ../boot/grub/grub.conf
+
+    Symbolic links are beyond the scope of this module, but are covered in the NDG Linux Essentials course.
+
+Sorting
+
+By default the output of the ls command is sorted alphabetically by filename. It can sort by other methods as well.
+
+Follow Along
+
+The options in examples below will be combined with the -l option so the relevant details of the files are displayed. Notice fields corresponding to the search option.
+
+The -t option will sort the files by timestamp:
+
+sysadmin@localhost:~$ ls -lt /var/log
+total 844
+-rw-r----- 1 syslog adm   19573 Oct  2 22:57 syslog
+-rw-r----- 1 syslog adm    1346 Oct  2 22:17 auth.log
+-rw-r----- 1 syslog adm     547 Oct  2 22:17 cron.log
+-rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog
+-rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp
+-rw-r----- 1 syslog adm     106 Oct  2 19:57 kern.log
+-rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log
+-rw-r--r-- 1 root   root  32064 Dec 20  2017 faillog
+-rw-r----- 1 root   adm   85083 Dec 20  2017 dmesg
+-rw-r--r-- 1 root   root 325238 Dec 20  2017 dpkg.log
+drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2
+drwxr-xr-x 1 root   root   4096 Dec 20  2017 apt
+-rw-r--r-- 1 root   root  47816 Dec  7  2017 bootstrap.log
+drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck
+-rw-rw---- 1 root   utmp      0 Dec  7  2017 btmp
+drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart
+
+The -S option will sort the files by file size:
+
+sysadmin@localhost:~$ ls -l -S /var/log
+total 844
+-rw-r--r-- 1 root   root 325238 Dec 20  2017 dpkg.log
+-rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog
+-rw-r----- 1 root   adm   85083 Dec 20  2017 dmesg
+-rw-r--r-- 1 root   root  47816 Dec  7  2017 bootstrap.log
+-rw-r--r-- 1 root   root  32064 Dec 20  2017 faillog
+-rw-r----- 1 syslog adm   19573 Oct  2 22:57 syslog
+-rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log
+drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2
+drwxr-xr-x 1 root   root   4096 Dec 20  2017 apt
+drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck
+drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart
+-rw-r----- 1 syslog adm    1346 Oct  2 22:17 auth.log
+-rw-r----- 1 syslog adm     547 Oct  2 22:17 cron.log
+-rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp
+-rw-r----- 1 syslog adm     106 Oct  2 19:57 kern.log
+-rw-rw---- 1 root   utmp      0 Dec  7  2017 btmp
+
+The -r option will reverse the order of any type of sort. Notice the difference when it is added to the previous example:
+
+sysadmin@localhost:~$ ls -lSr /var/log
+total 844
+-rw-rw---- 1 root   utmp      0 Dec  7  2017 btmp
+-rw-r----- 1 syslog adm     106 Oct  2 19:57 kern.log
+-rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp
+-rw-r----- 1 syslog adm     654 Oct  2 23:17 cron.log
+-rw-r----- 1 syslog adm    1669 Oct  2 23:17 auth.log
+drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart
+drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck
+drwxr-xr-x 1 root   root   4096 Dec 20  2017 apt
+drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2
+-rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log
+-rw-r----- 1 syslog adm   19680 Oct  2 23:17 syslog
+-rw-r--r-- 1 root   root  32064 Dec 20  2017 faillog
+-rw-r--r-- 1 root   root  47816 Dec  7  2017 bootstrap.log
+-rw-r----- 1 root   adm   85083 Dec 20  2017 dmesg
+-rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog
+-rw-r--r-- 1 root   root 325238 Dec 20  2017 dpkg.log
+
+The numbers in file size field switch from descending to ascending.
+
+Used alone the -r option with list the files in reverse alphabetical order:
+
+sysadmin@localhost:~$ ls -r /var/log
+wtmp     lastlog   faillog   cron.log       auth.log  alternatives.log
+upstart  kern.log  dpkg.log  btmp           apt
+syslog   fsck      dmesg     bootstrap.log  apache2
+
+<!-- 4
+ Changing Directories
+
+Files are used to store data such as text, graphics and programs. Directories are a type of file used to
+store other files–they provide a hierarchical organizational structure. The image below shows an abbreviated version of
+the filesystem structure on the virtual machines.
+Filesystem hierarchy with root directory at the top. No highlighted directories.
+
+When you start a fresh virtual machine, either by opening the course or after using the reset button, you are logged in
+as the sysadmin user in your home directory, highlighted below:
+
+Filesystem showing root directory at the top and directories underneath, including home directory.
+Under the home directory is a highlighted sysadmin directory and the directories inside of sysadmin (i.e., Documents) shown below.
+
+To navigate the filesystem structure, use the cd (change directory) command to change directories.
+
+cd [options] [path]
+
+If you look back at the graphic above, you will see the Documents directory is located within the home directory, where you are currently located.
+To move to the Documents directory, use it as argument to the cd command:
+
+sysadmin@localhost:~$ cd Documents
+sysadmin@localhost:~/Documents$
+
+Directories are equivalent to folders on Windows and Mac OS. Like these more popular operating systems,
+a Linux directory structure has a top level. It is not called "My Computer", but rather the root directory and it
+is represented by the / character. To move to the root directory, use the / character as the argument to the cd command.
+
+sysadmin@localhost:~/Documents$ cd /
+sysadmin@localhost:/$
+
+Filesystem hierarchy with highlighted root directory at the top.
+
+The argument to the cd command is more than just the name of a directory, it is actually a path.
+A path is a list of directories separated by the / character. For example, /home/sysadmin is the path to your home directory:
+Filesystem hierarchy with highlighted root directory at the top,
+highlighted home directory underneath and highlighted sysadmin directory under home directory.
+
+If you think of the filesystem as a map, paths are the step-by-step directions; they can be used to
+indicate the location of any file within the filesystem. There are two types of paths: absolute and relative.
+Absolute paths start at the root of the filesystem, relative paths start from your current location.
+
+An absolute path allows you to specify the exact location of a directory. It always starts at the root directory,
+therefore it always begins with the / character. The path to the home directory /home/sysadminis an absolute path.
+The path begins at the root / directory, moves into the home directory, and then into the sysadmin directory.
+Following this path on a graphical user interface (GUI) like your home computer would look something like this:
+
+Use this path as an argument to the cd command to move back into the home directory for the sysadmin user.
+
+sysadmin@localhost:/$ cd /home/sysadmin
+sysadmin@localhost:~$
+
+No output means the command succeeded. Go ahead and confirm this using the pwd command:
+
+sysadmin@localhost:~$ pwd
+/home/sysadmin
+
+Relative Paths
+
+A relative path gives directions to a file relative to your current location in the filesystem. Relative paths
+do not start with the / character, they start with the name of a directory. Take another look at the first cd command example.
+The argument is an example of the simplest relative path: the name of a directory in your current location.
+
+sysadmin@localhost:~$ cd Documents
+sysadmin@localhost:~/Documents$
+
+Filesystem hierarchy showing root at the top and directories underneath, including home directory.
+Highlighted sysadmin directory representing current location under home directory. Highlighted path to Documents directory under sysadmin directory.
+
+The image below shows a map of the files contained within the sysadmin directory. You are currently in the Documents directory
+and want to move to the Art directory:
+Filesystem system hierarchy showing sysadmin directory at the top, including highlighted Documents directory underneath as well as directories underneath the Documents directory, including the School directory. The highlighted Art directory is located underneath the School directory.
+
+A relative path begins in from with the current directory, however you don't include it in the path. The first step would be to move into the School directory, and then move into the Art directory. Use the / character to separate the directory names and the result School/Art is a relative path from the Documents directory to the Art directory:
+Filesystem system hierarchy showing sysadmin directory at the top and a relative path to the Art directory.
+
+Use the relative path as an argument to the cd command to move into the Art directory.
+
+sysadmin@localhost:~/Documents/$ cd School/Art
+sysadmin@localhost:~/Documents/School/Art$
+
+Use the pwd command to confirm the change:
+
+sysadmin@localhost:~/Documents/School/Art$ pwd
+/home/sysadmin/Documents/School/Art
+
+The output of the pwd command is the absolute path to the Art directory.
+Filesystem system hierarchy showing root directory at the top and a relative path to the Art directory.
+
+In the example above the cd command followed the School/Art path:
+
+cd School/Art
+
+A path can also be broken down into multiple cd commands. The following set of commands would achieve the same results:
+
+cd School
+cd Art
+
+Shortcuts
+
+The .. Characters
+
+Regardless of which directory you are in, .. always represents one directory higher relative to the current directory,
+sometimes referred to as the parent directory. To move from the Art directory back to the School directory:
+
+sysadmin@localhost:~/Documents/School/Art$ cd ..
+sysadmin@localhost:~/Documents/School$
+
+The . Character
+
+Regardless of which directory you are in, the . character always represents your current directory.
+For the cd this shortcut is not very useful, but it will come in handy for commands covered in subsequent sections.
+
+The ~ Character
+
+The home directory of the current user is represented by the ~ character. As stated above, you always begin as the sysadmin user, whose home is located at /home/sysadmin. To return to your home directory at any time execute the following command:
+
+sysadmin@localhost:~/Documents/School$ cd ~
+sysadmin@localhost:~$
+
+<!-- 3
+Printing Working Directory
+
+In order to discover where you are currently located within the filesystem, the pwd command can be used. The pwd command
+prints the working directory, your current location within the filesystem:
+
+pwd [OPTIONS]
+
+Don't turn on your printer just yet! In the early days of computing the command line output would be sent to physical printers.
+This method was replaced by video displays which could display information more quickly. We still use the word print
+even though the output is just being displayed on your screen.
+
+sysadmin@localhost:~$ pwd
+/home/sysadmin
+
+The output of the above command indicates that the user is currently in their home folder, shown in the filesystem below.
+Filesystem showing root directory at the top and directories underneath, including home directory.
+Under the home directory is a highlighted sysadmin directory and the directories inside of sysadmin (i.e., Documents) shown below
+
+Notice our virtual machines employ a prompt that displays the current working directory, emphasized with the color blue.
+In the first prompt above, the blue ~ is equivalent to /home/sysadmin, representing the user's home directory.
+
+sysadmin@localhost:~$
+
+After changing directories (we will learn how to do this in the next section), the new location can also be confirmed
+in the new prompt, again shown in blue.
+
+sysadmin@localhost:/etc/calendar$
+
+
+<!-- 2.2
+ Options
+
+command [options…] [arguments…]
+
+Options can be used to alter the behavior of a command. On the previous page, the ls command was used to list the
+contents of a directory. In the following example, the -l option is provided to the ls command, which results in a
+"long display" output, meaning the output gives more information about each of the files listed:
+
+sysadmin@localhost:~$ ls -l
+total 32
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Desktop
+drwx------ 4 sysadmin sysadmin 4096 Dec 20  2017 Documents
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Downloads
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Music
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Pictures
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Public
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Templates
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Videos
+
+Note that, in the command above, -l is a lowercase letter "L".
+
+Often the character is chosen to be mnemonic for its purpose, like choosing the letter l for long or r for reverse.
+By default, the ls command prints the results in alphabetical order, so adding the -r option will print the results in reverse alphabetical order.
+
+sysadmin@localhost:~$ ls -r
+Videos  Templates  Public  Pictures  Music  Downloads  Documents  Desktop
+
+Multiple options can be used at once, either given as separate options as in -l -r or combined like -lr. The output of
+all of these examples would be the same:
+
+ls -l -r
+ls -rl
+ls -lr
+
+As explained above, -l gives a long listing format while -r reverses the listing. The result of using both options is a long listing given in reverse order:
+
+sysadmin@localhost:~$ ls -l -r
+total 32
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Videos
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Templates
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Public
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Pictures
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Music
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Downloads
+drwx------ 4 sysadmin sysadmin 4096 Dec 20  2017 Documents
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Desktop
+sysadmin@localhost:~$ ls -rl
+total 32
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Videos
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Templates
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Public
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Pictures
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Music
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Downloads
+drwx------ 4 sysadmin sysadmin 4096 Dec 20  2017 Documents
+drwx------ 2 sysadmin sysadmin 4096 Dec 20  2017 Desktop
+
+Ultimately, commands can use many combinations of options and arguments. The possibilities for each command will be unique.
+Remember the aptitude easter egg?
+
+sysadmin@localhost:~$ aptitude moo
+There are no Easter Eggs in this program.
+
+It is possible to alter the behavior of this command using options. See what happens when the -v (verbose) option is added:
+
+sysadmin@localhost:~$ aptitude -v moo
+There really are no Easter Eggs in this program.
+
+By combining multiple -v options, we can get a variety of responses:
+
+sysadmin@localhost:~$ aptitude -vv moo
+Didn't I already tell you that there are no Easter Eggs in this program?
+sysadmin@localhost:~$ aptitude -vvv moo
+Stop it!
+
+Remember multiple options can be denoted separately or combined:
+
+aptitude -v -v moo
+aptitude -vv moo
+
+Keep adding -v options to see how many unique responses you can get!
+
+<!-- 2.1
+
+ Arguments
+
+command [options…] [arguments…]
+
+An argument can be used to specify something for the command to act upon. The ls command can be given the name of a
+directory as an argument, and it will list the contents of that directory. In the next example, the Documents directory will be used as an argument:
+
+sysadmin@localhost:~$ ls Documents
+School           alpha-second.txt  food.txt     linux.txt     os.csv
+Work             alpha-third.txt   hello.sh     longfile.txt  people.csv
+adjectives.txt   alpha.txt         hidden.txt   newhome.txt   profile.txt
+alpha-first.txt  animals.txt       letters.txt  numbers.txt   red.txt
+
+The resulting output is a list of files contained with the Documents directory.
+
+Because Linux is open source, there are some interesting secrets that have been added by developers. For example,
+the aptitude command is a package management tool available on some Linux distributions. This command will accept moo as an argument:
+
+sysadmin@localhost:~$ aptitude moo
+There are no Easter Eggs in this program.
+
+There is more to this trick than meets the eye, keep reading!
+Linux is Open Source. Linux is developed by a community, you view and contribute to the source code.
+
+
+<!-- 2
+This module deals exclusively with the CLI or Command Line Interface, rather than a GUI or Graphical User Interface
+you may be familiar with. The CLI terminal is a powerful tool that is often the primary method used to administer
+small low-power devices, extremely capable cloud computing servers, and everything in between. A basic understanding of the terminal is
+essential to diagnosing and fixing most Linux based systems. Since Linux has now become so ubiquitous, even those who plan on working primarily with systems
+not utilizing the Linux kernel can benefit from having a basic understanding of the terminal.
+A command is a software program that when executed on the CLI (command line interface), performs an action on the computer.
+When you type in a command, a process is run by the operating system that can read input, manipulate data and produce output.
+A command runs a process on the operating system, which then causes the computer to perform a job.
+To execute a command, the first step is to type the name of the command. Click in the terminal on the right. Type ls (lowercase letters L and S) and
+hit Enter. The result should resemble the example below:
+The name of the command is often based on what it does or what the developer who created the command thinks will
+best describe the command's function. For example, the ls command displays a listing of information about files.
+Associating the name of the command with something mnemonic for what it does may help you to remember commands more easily.
+Every part of the command is normally case-sensitive, so LS is incorrect and will fail, but ls is correct and will execute.
+
+sysadmin@localhost:~$ LS
+-bash: /usr/games/LS: Permission denied
+
+Most commands follow a simple pattern of syntax:
+
+command [options…] [arguments…]
+
+In other words, you type a command, followed by any options and/or arguments before pressing the Enter key.
+Typically options alter the behavior of the command and arguments are items or values for the command to act upon. Although
+there are some commands in Linux that aren’t entirely consistent with this syntax, most commands use this syntax or something similar.
+
+In the example above, the ls command was executed without any options or arguments. When this is the case, it’s default behavior is to
+return a list of files contained within the current directory.
+
+
+<!-- 1.2
+If you have never used an NDG Online course before, get familiar with our interface by taking the tour. You can access it
+at any time using the Help menu in the upper right hand corner.
+Screenshot of the course environment with the Start Tour option highlighted. The Start Tour option is displayed in the
+drop-down menu accessed by clicking on the Help button on the top right of the page.
+This content aligns to various LPI Linux Essentials Exam 010-160 objectives. Please note that Linux Unhatched is designed to be
+an exploratory module for beginners which aligns to various LPI Linux Essentials objectives, but is not designed to be
+a comprehensive exam preparation module. For more information click on the Objectives tab:
+Screenshot of the course environment with the Objectives tab highlighted. The Objectives tab is found above the course content,
+next to the 'Content' tab.
+To the right of the content you've been provide a Linux virtual machine to practice your skills on. All of the examples
+in this course were created on our machines and we encourage you to try them out! Be aware that
+the output you see on the command line interface will not always match the example in content exactly.
+
+<!-- 1.1
+
+Why Learn Linux?
+
+The field of Information Technology (IT) is full of opportunities. For individuals who wish to pursue a career in IT,
+one of the biggest challenges can be deciding how to get started. Often, people are motivated to learn new skills that will
+enable them to pursue bigger and better opportunities in both their personal and professional lives. Learning a new skill
+takes time and discipline, but with the right motivation, it doesn’t have to be painful. In this section, we will
+discuss why the time and effort you invest in learning Linux will be beneficial to you; and remember, everyone working in IT had to start somewhere.
+Learning Linux is a great way to start! Why is Linux an important skill to learn in today’s technology-driven world?
+Before we determine what makes Linux such a great asset to your skill-set, let’s define it first. Linux is operating system software that
+runs on a hardware computer system. An operating system is software that allows other programs like word processors
+and web browsers to be installed and run on a computer.
+Your cell phone, tablet, laptop and desktop all need an operating system to run the software (often called applications) you want to use. This means that
+Linux is not limited to only desktops and laptops, and we will expand on that as we continue our discussion.
+The main reason why learning Linux is useful is that Linux is used almost everywhere! Linux is used on desktop and laptop computers,
+web servers, mobile devices (Android), public cloud technology (i.e., Google, Amazon, etc), Chromebooks, and networking (i.e., Cisco Networks).
+Although you may not have ever used Linux on a desktop or laptop, it is likely that you are using other technology that runs on Linux
+such as a mobile phone running Android, a tablet or popular websites such as Facebook, Twitter, and Amazon. In fact, it is estimated that
+servers running Linux generate over half of the web pages on the internet.
+You may have heard of Linux and thought that only technologically advanced individuals are using it for programming,
+developing, or maybe even hacking! Although it is true that many techies use Linux, that doesn’t mean Linux is too difficult to learn or
+isn’t useful for beginners.
+In fact, understanding Linux, especially the Linux command line interface, will help you understand computing better while
+giving you basic computing skills that you can use in a future career.
+To understand why Linux skills are unique, let’s examine the graphical user interface (GUI). This is the interface that you are probably using on your smartphone,
+ tablet or computer today. A GUI displays icons and images that you can select to tell your device what you want to do or use.
+Behind the GUI, is a code that a programmer developed. When you click on an icon or folder in a GUI, it
+sends a command to the code telling the system what to do.
+Image of a graphical user interface with file manager window and file folders
+
+Linux desktops use a GUI but it also has a more efficient tool for carrying out the same actions as a GUI, the command-line interface (CLI).
+Image of commands being typed out in a terminal on a command line prompt
+The Linux command-line is a text-based interface that accepts commands that you type into it. These commands
+cause an action to be executed onto the computer system’s operating system. Of course, windows and icons are easy to use,
+however, the command-line is often the hero when it comes to system administration and troubleshooting as it gives a clear picture
+of what the system is doing at any given moment.
+All this considered, why is learning Linux a good start for someone considering a career in IT? As previously stated, the
+use of Linux is widespread and is continuing to grow in all areas of technology. What do companies and organizations like NASA,
+McDonald's, New York Stock Exchange (NYSE), DreamWorks Animation, and the US Department of Defense all have in common? Yes,
+you guessed correctly, they all use Linux.
+These companies have something else in common in that they recognize that investing in technology is important in a world that
+is anxious to adopt new technology to innovate and solve problems. The proliferation of tech in almost every aspect of life
+has solved many problems but has also created some new challenges. For example, now that almost everything can be done online,
+we are creating digital data at a rapid rate, which is creating a demand for that data. Technical skills to analyze, process, protect, and
+transmit data are therefore also in high demand. Learning Linux can help you on the journey towards acquiring these skills.
+The following are examples of a few IT professions that require knowledge of Linux skills:
+
+Network Engineering - Network engineers are responsible for managing the network computers use to transmit data. Knowledge of Linux is critical for
+network engineers since more than half of the world’s servers are Linux-based. Most network operating systems are based on a variation of Linux.
+
+Cybersecurity - Cybersecurity professionals monitor and investigate security threats to data on systems. Linux is used in cybersecurity to
+carry out system penetration testing and assess the vulnerability of a system.
+
+Developing/Programming - Developers and programmers design computer applications. The Linux command-line allows developers and programmers to script;
+a function that allows a user to put commands together to execute complex actions on a computer. Linux is also used in this field because
+only Linux allows users to access its source code, giving users the ability to experiment with the code and learn by doing.
+
+Data Analysis - Data analysts and scientists sort and analyze data sets to find patterns in order to report and
+predict trends and behavior. Data analysts use Linux due to the wide array of tools and commands available for data analysis, such as MySQL and more.
+
+Linux operating systems come in many forms. There is a variety of distributions available to fit the needs and demands of
+many IT sectors. For example, cybersecurity professionals may use Linux Kali, developers may use Linux Ubuntu, regular users may use Linux Mint, and enterprise servers can run on Red Hat Enterprise Linux.
+
+Consider This
+
+Linux skills are needed for many IT professional tracks. For example, knowledge of basic Linux commands is a prerequisite for
+IT certification programs like the popular Cisco Certified CyberOps Associate certification. To learn more about how Linux applies to
+Cisco Certified CyberOps Associate, visit the section at the end of this course called Linux for Cisco Certified CyberOps Associate.
+
+A few other great reasons to use and learn Linux are that, in many cases, it is free, easy to install, open source, and
+there is an active Linux community available for support. This allows beginners who want to start growing their IT skills to start using Linux easily.
+
+As you can see, there are many reasons to learn and explore Linux!
+
+<!-- 1.0
+Hello, and welcome to the NDG Linux Unhatched Module! We are very excited to offer you this short
+introduction to the world of Linux. Before you get started, we would like to take the opportunity to
+explain the intent and scope of this module.
+Do not be concerned if you have little or no Linux experience. This module is designed as an
+introduction for beginning learners without previous Linux training. If you find this material useful, you
+may consider continuing with our NDG Linux Essentials or NDG Introduction to Linux courses to
+build additional knowledge. Additional information regarding these courses can be found
+at the end of this module.
+As you may already be aware, the Linux kernel has found its way into an incredible number of diverse systems.
+It can now be found in everything from automobiles to rockets, watches to televisions, and netbooks to
+the fastest supercomputers. Linux only accounts for a relatively small percentage of the operating systems
+found on desktop computers, but has gained widespread use in servers, Internet of Things (IoT) devices,
+networking equipment, smartphones, and many other devices you may not think of as even being computers.
+From the home router providing your Internet connection to the server this course is hosted on, it is likely
+that multiple Linux powered devices are currently enabling you to read this page.
+We hope that you find the NDG Linux Unhatched Module helpful. Congratulations on taking your first steps
+into the world of Linux!
+
+ * Starting domain name service... bind9                                 [ OK ]
+Welcome to Ubuntu 14.04 LTS (GNU/Linux 4.4.0-101-generic x86_64)
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+-->
+///////////////////
+NDG Linux Unhatched
+
+Learn basic installation and configuration of Linux software and get introduced to the Linux command line.
+
+By Cisco Networking Academy in collaboration with NDG
+
+The “Start From Scratch” Linux Course
+
+Ever considered a career in Linux? Or, stuck in a dead-end job and exploring options for a career change?
+NDG Linux Unhatched allows students to wade into the shallow end of Linux, the back-end operating system
+used by global titans such as Facebook, Google, Microsoft, NASA, Tesla, Amazon and more.
+
+Graduates walk away with a clear understanding of whether Linux is for them or not, without having to
+commit to more than 8 total hours of self-paced learning. To ensure you don’t get stuck, you’ll be
+guided step-by-step through a series of hands-on virtual machine activities. The course aligns well
+with the Linux exam objectives found on the
+CompTIA A+ Certification
+. After this course, we suggest
+taking either NDG Linux Essentials or NDG Linux I.
+
+You'll Learn These Core Skills:
+
+Basic installation and configuration of Linux software.
+Understand the basics of the Linux Command Line Interface (CLI).
+Interact with the Linux virtual machine.
+Determine if Linux is for you or not.
+
+This entry-level Linux course is offered by the Network Development Group (NDG).  The skills
+taught in this course are applicable to a wide range of careers including networking, software development
+and Linux administration.
+
+To Get Started:
+
+ 1. Click on Course Content.
+ 2.  Check the box to accept terms and conditions, click Submit.
+ 3. Close the window, refresh the previous window, and reload the content.
+
+Need Help?
+
+Click on the Help & Resources module below.
+Email hostedsupport@netdevgroup.com
