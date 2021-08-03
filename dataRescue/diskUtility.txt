@@ -1,0 +1,3 @@
+View > Show All Devices (if available) from the menu bar or toolbar in Disk Utility
+Repair Order: Macintosh HD - Data > Macintosh HD > Container disk3 > APPLE HDD
+Repair volumes, then containers, then disks

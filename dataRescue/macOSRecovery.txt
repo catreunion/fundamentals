@@ -1,0 +1,6 @@
+Intel Processor: Press and hold Command (⌘)-R immediately after you see the Apple logo
+macOS Recovery > Utilities > Startup Security Utility
+
+Apple Silicon: Turn on the Mac and continue to hold the power button
+
+Start up from Internet Recovery: Option-Command-R / Shift-Option-Command-R
