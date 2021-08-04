@@ -1,0 +1,52 @@
+isaac@256SSD ~ % brew install git
+==> Downloading https://ghcr.io/v2/homebrew/core/gettext/manifests/0.21
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/gettext/blobs/sha256:cdea54f52b7c36ebcb5fe26a1cf736d7cd6fd5f2fd016dd8357a8624ffd6b5f8
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:cdea54f52b7c36ebcb5fe26a1cf736d7cd6fd5f2fd016dd8357a8624ffd6b5f8?se=2021-08-04T07%3A45%3A00Z&sig
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/pcre2/manifests/10.37_1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/pcre2/blobs/sha256:0e40c8534a5fc26eedbbfb487cf437e8b231e0054ccb61c696834416b7160ac7
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:0e40c8534a5fc26eedbbfb487cf437e8b231e0054ccb61c696834416b7160ac7?se=2021-08-04T07%3A45%3A00Z&sig
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/git/manifests/2.32.0_1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/git/blobs/sha256:0f303c5f3bb53ff24d0ba10d7c2612b0f4bc8e384eb082b51a8aff62e4aace72
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:0f303c5f3bb53ff24d0ba10d7c2612b0f4bc8e384eb082b51a8aff62e4aace72?se=2021-08-04T07%3A45%3A00Z&sig
+######################################################################## 100.0%
+==> Installing dependencies for git: gettext and pcre2
+==> Installing git dependency: gettext
+==> Pouring gettext--0.21.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/gettext/0.21: 1,953 files, 19.0MB
+==> Installing git dependency: pcre2
+==> Pouring pcre2--10.37_1.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/pcre2/10.37_1: 230 files, 6.2MB
+==> Installing git
+==> Pouring git--2.32.0_1.catalina.bottle.tar.gz
+==> Caveats
+The Tcl/Tk GUIs (e.g. gitk, git-gui) are now in the `git-gui` formula.
+
+zsh completions and functions have been installed to:
+  /usr/local/share/zsh/site-functions
+
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/git
+==> Summary
+🍺  /usr/local/Cellar/git/2.32.0_1: 1,517 files, 42.0MB
+==> Caveats
+==> git
+The Tcl/Tk GUIs (e.g. gitk, git-gui) are now in the `git-gui` formula.
+
+zsh completions and functions have been installed to:
+  /usr/local/share/zsh/site-functions
+
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/git
+isaac@256SSD ~ % 
+
+
+
+
+
+
+

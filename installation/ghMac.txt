@@ -1,0 +1,31 @@
+isaac@256SSD .ssh % eval "$(ssh-agent -s)"
+Agent pid 5714
+
+isaac@256SSD .ssh % ssh-add ~/.ssh/id_ed25519
+Enter passphrase for /Users/isaac/.ssh/id_ed25519: 
+Identity added: /Users/isaac/.ssh/id_ed25519 (TableMint)
+
+isaac@256SSD .ssh % xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+Error: Can't open display: (null)
+
+isaac@256SSD .ssh % brew install gh
+Updating Homebrew...
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> Updated Formulae
+Updated 1 formula.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/gh/manifests/1.13.1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/gh/blobs/sha256:779ddf5d46459f56946bc7e7e6066fa7dafb28df26e303dfd24250f34eb8ef3d
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:779ddf5d46459f56946bc7e7e6066fa7dafb28df26e303dfd24250f34eb8ef3d?se=2021-08-04T08%3A00%3A00Z&sig
+######################################################################## 100.0%
+==> Pouring gh--1.13.1.catalina.bottle.tar.gz
+==> Caveats
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/gh/1.13.1: 90 files, 28.7MB
+isaac@256SSD .ssh % 

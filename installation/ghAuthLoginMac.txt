@@ -1,0 +1,26 @@
+isaac@256SSD Desktop % gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? SSH
+? Upload your SSH public key to your GitHub account? /Users/isaac/.ssh/id_ed25519.pub
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 629D-8114
+- Press Enter to open github.com in your browser... 
+✓ Authentication complete. Press Enter to continue...
+
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+✓ Uploaded the SSH key to your GitHub account: /Users/isaac/.ssh/id_ed25519.pub
+✓ Logged in as catreunion
+
+isaac@256SSD Desktop % gh auth status
+github.com
+  ✓ Logged in to github.com as catreunion (/Users/isaac/.config/gh/hosts.yml)
+  ✓ Git operations for github.com configured to use ssh protocol.
+  ✓ Token: *******************
+  
+isaac@256SSD Desktop % gh auth status -t
+github.com
+  ✓ Logged in to github.com as catreunion (/Users/isaac/.config/gh/hosts.yml)
+  ✓ Git operations for github.com configured to use ssh protocol.
+  ✓ Token: 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
