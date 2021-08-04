@@ -1,0 +1,12 @@
+Use Terminal to see which processes are using internet connection
+By Rob Griffiths
+$ lsof -P -i -n | cut -f 1 -d " " | uniq
+COMMAND
+syncthing
+kited
+ulauncher
+firefox
+WebKitNet
+java
+
+processesUsingInternetConnection.txt

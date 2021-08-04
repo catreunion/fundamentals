@@ -1,0 +1,51 @@
+Uninstall PyCharm﻿
+
+Uninstall using the Toolbox App﻿
+
+If you installed PyCharm using the Toolbox App, do the following:
+
+    Open the Toolbox App, click the screw nut icon for the necessary instance, and select Uninstall.
+
+Uninstall a standalone instance﻿
+
+If you are running a standalone PyCharm instance, the directories used by PyCharm are preserved when you remove your instance in case you want to keep your settings for later or to use them with another instance, another version, or another IDE. You can remove those directories if you are sure you won't need them.
+Windows
+macOS
+Linux
+
+    Open the Apps & Features section in the Windows Settings dialog, select the PyCharm app and click Uninstall.
+
+    Depending on your version of Windows, the procedure for uninstalling programs may be different. You can also manually run Uninstall.exe in the installation directory under /bin.
+
+    Remove the following directories:
+
+    Syntax
+        %APPDATA%\JetBrains\<product><version>
+        %LOCALAPPDATA%\JetBrains\<product><version>
+    Example
+        C:\Users\JohnS\AppData\Roaming\JetBrains\PyCharm2021.2
+        C:\Users\JohnS\AppData\Local\JetBrains\PyCharm2021.2
+
+    note
+
+    The default IDE directories changed starting from PyCharm 2020.1. If you had a previous version, new installations will import configuration from the old directories. For information about the location of the default directories in previous IDE versions, see the corresponding help version, for example: https://www.jetbrains.com/help/pycharm/2019.3/tuning-the-ide.html#default-dirs.
+
+Uninstall silently on Windows﻿
+
+If you installed PyCharm silently, you can run the uninstaller with the /S switch as an administrator. The uninstaller is located in the installation directory under bin.
+
+Run cmd (Windows Command Prompt) as administrator, change to the PyCharm installation directory, and run the following:
+
+>
+bin\uninstall.exe /S
+
+Copied!
+Uninstall the snap package on Linux﻿
+
+If you installed PyCharm as a snap package, use the following command to remove it:
+Professional Edition
+Community Edition
+Educational Edition
+
+$
+sudo snap remove pycharm-professional
