@@ -1,0 +1,63 @@
+// Update apt Repository
+$ sudo apt update
+
+// Download the Google signing key
+// Add the Google Chrome Repository
+$ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+// Set up the Google Chrome repository
+$ echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+
+// Update the apt cache
+$ sudo apt update
+
+// Install Google Chrome
+$ sudo apt install -y google-chrome-stable
+
+// Launch Google Chrome
+$ google-chrome-stable
+$ google-chrome
+
+The web browser is the most important and frequently used application on all operating systems, through which you can
+access search results and browse the Internet. In Linux Mint 20, the default web browser is Mozilla Firefox, but
+many users prefer to install Google Chrome due to its advanced, useful features. Google Chrome, developed by Google, is
+one of the most popular freely available web browsers. It uses the WebKit layout engine and has the ability to
+translate more than 52 languages.
+
+The functionality of Google Chrome can easily be extended by installing different useful extensions and web applications. You
+can also change the browser’s look by installing new themes.
+
+This article will show you how to install Google Chrome in Linux Mint 20 OS using the command-line interface.
+All commands in this article were implemented in the Linux Mint 20 distro. Let us now start the demonstration!
+
+First, open the terminal using the keyboard shortcut method Ctrl + Alt + t. You can also access the terminal window
+from the Start Menu of the Linux Mint distribution. Click on the Start Menu icon and click on the terminal.
+
+It is recommended that you first update the apt repository before installing any new packages onto your Linux system. So,
+update the apt-cache by issuing the following command:
+
+Method 2: Install Chrome Using the .deb Package
+
+You can download the .deb package for Google Chrome onto your system by using the following URL: https://www.google.com/chrome/. Open this URL in your Mozilla Firefox browser, and then click the ‘Download Chrome’ button.
+
+The following dialog will display in the window. Choose the 64-bit .deb package (for Debian/Ubuntu), and then click the ‘Accept and Install’ option.
+
+Again, a dialog box will appear on the desktop. Select the ‘Save File’ option and specify the path where you want to save the downloaded .deb package, then click ‘OK.’ In a moment, Chrome will start to download onto your Linux Mint 20 system.
+
+Once the download is complete, open the terminal and navigate to the system downloads using the cd command and list files, as follows:
+
+Here, you will type the following command to install the .deb package on your system:
+$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+Enter the sudo user password. After that, Chrome will begin to install onto your system.
+
+After completing the installation of Google Chrome, using the same methods mentioned in the section above, you can launch Google Chrome on your system.
+
+Congratulations! Google Chrome has been installed on your system.
+Conclusion
+
+This article showed you two different methods for installing Google Chrome onto your Linux Mint 20 system using the terminal commands. Once the installation of Chrome is complete, feel free to add Chrome extensions and your favorite themes from the Google Chrome web store.
+About the author
+Karim Buzdar
+
+Karim Buzdar holds a degree in telecommunication engineering and holds several sysadmin certifications. As an IT engineer and technical author, he writes for various web sites. He blogs at LinuxWays.
