@@ -1,0 +1,130 @@
+/Users/<Username>/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/
+
+https://appuals.com/fix-outlook-for-macs-search-not-working/
+Fix: Outlook for Mac’s Search Not Working
+By Kevin Arrows July 22, 2021 6 minutes read
+
+Outlook is a great program for managing your emails from multiple accounts. Outlook also provides a wide range of
+features that can be useful for overall time management. Overall, Outlook is a great software that is suitable for
+business people for management of emails. But, despite being very useful, you might encounter some problems while
+using Outlook for Mac. A very common problem in Outlook for Mac is its search problems. Sometimes, if you try to
+search for a specific email you will get “No results found” from the search result. This is a problem because it will
+give you the “No results found” answer even if your email is in the folder. The error comes without any prior warning
+so you won’t be able to detect or prevent it. This can be a huge problem especially for people with a lot of emails
+because it would take a lot of time for them to go through all the emails.
+
+The exact reason of this error is still unknown though but there are a couple of things that might cause this problem
+like corrupt or incomplete spotlight indexing, one of the parent folders being in privacy tab, Outlook profile folder
+being stored at a wrong place and several others. Since it can happen because of a lot of things, there are multiple
+methods that you can try to solve this.
+
+So, go through each method listed below and check whether the problem is solved after following each method.
+
+If you recently added a new account or a new profile or imported new data into the Outlook then it might simply be
+a matter of time. It takes some time to add newly imported data to Spotlight index. So
+wait until the indexing is complete and then try again.
+
+Make sure that you have all the latest updates of office. The issue is usually solved by updating your Microsoft
+Office as well. To update, just simply open Microsoft Outlook, select Help and then select Check for updates. It will
+check and automatically install the updates.
+
+Sometimes the problem might be caused by the Outlook Profile folder being stored at the wrong place. There is a
+default location where these folders are supposed to be stored. So, checking these places is a good way to check
+whether the problem is because of wrong destination. This is the default location
+
+/Users/<Username>/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/
+
+Make sure that there aren’t any special characters in your Outlook Profile’s name because that can create a lot of
+problems. If there are then go to method 1 to delete and recreate your Outlook Profile.
+
+However, if you don’t want to delete and recreate your profile, you can go to this location
+/Users/<Username>/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/ and
+rename your Profile folder without the special characters as well. Don’t forget to replace “<Username>” with your
+mac username.
+
+Method 1: Remaking Outlook Profile
+
+Sometimes deleting your current Microsoft Outlook profile and recreating the profile solves the problem. The steps for
+deleting and recreating the Outlook’s profile are given below.
+
+Open your Outlook
+Go to Outlook and then Preferences
+Select Accounts
+Select the account that is having this issue and select the minus (-) symbol
+Confirm the action and select delete when it asks for confirmation
+Close Outlook once the deleting of account is done
+Now go to your Applications folder
+Right click Outlook and select Show Package Contents
+Now go to Contents and then select ShareSupport
+Now open Outlook Profile Manager
+Select your main profile, that you are having troubles with, and select the minus (-) symbol to delete it.
+Confirm any additional prompts
+Once it is deleted, select the plus (+) symbol on the bottom left corner to create a new profile
+Name the profile something other than the Main Profile. It can be your first name or anything. Also,
+DO NOT include any special characters in the name.
+Now open Outlook
+Go to Outlook and then Preferences
+Select Accounts
+Select the plus (+) symbol on the bottom left corner to add the account
+Select the type of account you want and proceed
+Once you add the account, check the search results once the emails are synced and imported.
+
+Method 2: Moving Message to another Account
+This isn’t a solution but more of a workaround but it works for plenty of users. Basically, if you move all of your
+message, that are having this problem, to another temporary folder within the Outlook and then move them back to their
+original folder then the search works. This is because it forces the Outlook to re-index them in the search and they
+start to appear in the search results.
+
+Open Outlook
+Press and Hold CTRL (Control) key and click on the folder, from the folder list, in which you want to make a new folder.
+This newly created folder will be used as a temporary folder for your items.
+Select New folder and then name it whatever you want. Now press Enter.
+Now, Hold down Command key and click the items that you want to select.
+Once you are done, click Move in your Home tab
+Select Choose Folder
+Now type your destination folder’s name. In this case the name of the folder we created above. Once it appears in
+the result, click it
+Select Move
+Once your messages are moved, repeat the steps from 4-8 to move your messages back to their original folder
+Once you are done, check the search results and it should work fine. If you want to delete the temporary folder that
+you created then right click the folder, select delete and then confirm any additional prompts.
+
+Method 3: Check Spotlight Privacy Tab
+Make sure that you’re Outlook Profile or any of its parent’s folder aren’t in the privacy tab of Spotlight. If your
+Outlook Profile or any of its parent folder are displayed in the Spotlight privacy tab then Spotlight won’t be able to
+search. So, remove them from the privacy tab of Spotlight and try again.
+
+To remove your folders from the privacy tab of Spotlight, follow the steps given below
+
+Spotlight Preferences
+Privacy
+Now look for your Outlook’ Profile folder or any of its parents folder in the list
+If you find any folder then select it and click the minus (-) symbol on the bottom left to remove it from the privacy tab
+Quit the system preferences and wait a little bit because it will take some time to re-index the Spotlight.
+Once the re-indexing is done, check if the search is working again or not.
+
+Method 4: Fix Corrupt Spotlight Index
+If nothing else worked then it’s very likely that the Spotlight index may be corrupted. There are some steps that you
+can take to re-index the Spotlight index which will solve this problem if the problem is caused by the
+corrupt Spotlight index.
+
+Restart your Mac just to make sure that the Spotlight index services are running
+Terminal --> Type
+mdimport –L
+Now check if you see more than 1
+Microsoft Outlook Spotlight Importer.mdimporter
+Delete the Outlook application that you aren’t using. Once you are done,
+empty it from the Trash, restart your Mac, and go back to step 1.
+Now type
+mdimport -g “/Applications/Microsoft Outlook.app/Contents/Library/Spotlight/Microsoft Outlook Spotlight Importer.mdimporter” -d1 “/Users/<user_name>/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/<my_profile_name>”
+
+On the recent versions of Windows the “-g” doesn’t work anymore, therefore, try the following command if the above one
+doesn’t work for you and proceed with the steps below:
+
+mdimport -r “/Applications/Microsoft Outlook.app/Contents/Library/Spotlight/Microsoft Outlook Spotlight Importer.mdimporter” -d1 “/Users/<user_name>/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/<my_profile_name>”
+
+-g means the default install location of Outlook and the address after –d1 is the default path for your profile folder.
+If you installed your outlook in a custom location then substitute your custom path in place of –g. Or, if you
+changed the path of your Outlook Profile folder then substitute that path after –d1.
+
+Wait for it to complete because it will take some time to re-index the Spotlight. Once it is done, check the search again.

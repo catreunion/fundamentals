@@ -1,0 +1,33 @@
+Method 1:
+myaccount.google.com
+'Manage third-party access'
+Remove 'Microsoft apps & services'
+Add the account again
+
+Method 2:
+Turning on Less secure apps
+Add the account again
+
+Method 3:
+Tools > Accounts > + Sign > Add Account
+You type in your @gmail or whatever assoc with google account, then click "Continue".
+On the next screen DONT click Continue
+Click "Sync Directly with Google"
+Take to the AUTH page in the web browser
+
+Method 4:
+Select IMAP/POP account and then change all entries from @gmail to @googlemail
+imap.gmail.com  993 SSL
+smtp.gmail.com  465 SSL
+
+https://support.microsoft.com/en-us/office/fix-problems-connecting-your-google-account-to-the-microsoft-cloud-6b54d709-f8e9-4f61-8e4d-245d0a52bdd6
+
+IMAP must be enabled in Gmail
+Open Manage Connected Accounts in Outlook.com
+imap.gmail.com  SSL                                 993
+smtp.gmail.com  SSL, TLS, Requires Authentication   465
+                            Port for TLS/STARTTLS:  587
+    Select the Labels tab.
+    Make sure that Show in IMAP is selected for Inbox, Sent Mail, Trash, and All Mail.
+    You can also select Show in IMAP for other labels that you want to see in Outlook or Mail for Windows 10.
+Outlook 2016 for Mac:    On the ribbon, select Organize > Sync Folder.
