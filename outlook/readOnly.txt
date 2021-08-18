@@ -1,0 +1,1 @@
+sudo mv /System/Library/QuickLook/Office.qlgenerator /System/Library/QuickLook/Office.qlgenerator.bak ; killall Finder
