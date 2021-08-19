@@ -1,0 +1,8 @@
+$ sudo apt update
+$ sudo apt install snapd
+(Reboot the device)
+$ sudo snap install core
+
+    The default terminal, also known as a command line, is called LXTerminal and it’s launched from its icon on the desktop. Take a look at the official Raspberry Pi documentation if you’re unfamiliar with the terminal.
+
+Ubuntu Core on the Raspberry Pi: Snap is an integral part of Ubuntu Core, which can be installed as the native Raspberry Pi operating system. Ubuntu Core provides more permissive access to the Raspberry Pi, and may enable functionality not easily mirrored when snap is installed from Raspberry Pi OS. A good example of this is low-level access to a Raspberry Pi’s GPIO pins.
