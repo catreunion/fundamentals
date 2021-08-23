@@ -1,0 +1,85 @@
+https://www.fossmint.com/free-mind-mapping-software-for-linux/
+
+Mind Mapping Software for Linux
+Mind maps are diagrams used to organize information visually in hierarchical ways that show relationships among the elements that make up the map. Drawing mind maps have been proven to be highly effective for getting information in and out of the brain especially when combined with logical note-taking that typically details or summarizes the roles of the map’s components along the way.
+
+There are various mind mapping software out there ranging from free to paid to open source options. Today, my job is to list the best mind mapping software available to users for free. They are all modern, easy enough to use, and offer sufficient consumer support.
+
+1. Cacoo
+
+Cacoo is the perfect diagramming app for teams. It has real-time collaborative editing, which means multiple people can work together on diagrams simultaneously and see who’s working on what through live cursors.
+
+Best of all, there’s no annoying lag time or need to refresh to see changes. Whether you’re brainstorming ideas in the conference room or fixing up a diagram from home, your team can work together from anywhere with an internet connection.
+
+Whether you’re a diagramming pro or just getting started, Cacoo has hundreds of professional-grade templates and shapes available to take your diagrams from ideation to presentation in no time. Integrations with AWS, Dropbox, OneDrive, Microsoft Teams, Slack, and Zapier, you can use Cacoo alongside your other favorite productivity apps.
+
+2. MindMaster
+
+MindMaster is a beautiful freemium mind mapping tool for creating different types of diagrams i.e. flowcharts, network diagrams, floor plans, business diagrams, charts and graphs, graphic designs, 3D maps, etc.
+
+You can sync files across devices, share your knowledge in the MindMaster community, brainstorm, collaborate, and easily manage all of your data from an eye-candy and responsive UI.
+
+3. Lucidchart
+
+Lucidchart is a beautiful freemium online diagramming and visual solution software that is capable of translating ideas into beautiful customizable diagrams with any level of complexity.
+
+It offers integrated tools that enable users to enjoy real-time communication and collaboration, unlimited undo/redo history, tons of shapes for creating anything from basic flowcharts to complex technical diagrams and everything is nicely organized.
+
+4. Draw.io
+
+Draw.io is an online mind mapping platform that enables users to create any type of diagram and it even comes with ready-made categorized templates e.g templates ones for engineering, layouts, maps, flowcharts, graphs, network diagrams, UML, etc. which speed up the diagramming process.
+  Light Table - A Next-Generation Open-Source and Customizable IDE
+
+It also allows you to save diagrams to your hard drive, OneDrive, or Google Drive and import files from Lucidchart, VSDX, Gliffy, etc.
+
+5. Freemind
+
+FreeMind is a free and open source high-productivity mind mapping tool with features such as tracking projects, time recording, a workplace for searching using Google and other web engines, essay writing, brainstorming, fully functional HTML links to even files stored locally, smart Drag ‘n drop, fast one-click navigation, etc.
+
+6. Mindomo
+
+Mindomo is a freemium cross-platform application for creating mind maps easily and intuitively. It offers users outline creation, publishing online, full import/export functionality, mind map-to-presentation, customizable map themes, revision history, support for hyperlinks and attachments, etc.
+
+7. View Your Mind
+
+View Your Mind is a free and open source mind mapping app that enables users to generate and manipulate maps to show their thoughts in an organized way that improves creativity and efficiency.
+
+Its feature highlights include bookmarks, Xlinks, a branch property window, a map editor, a history window, keyboard shortcuts, one-click function for complex tasks e.g. reorder parts of a map with a single click, etc.
+
+8. Freeplane
+
+Freeplane is a free, cross-platform and open source application designed to enable critical thinking, information sharing, and completing tasks at home, work, or school. It features tools for creating mind maps as well as analyzing the information in the maps and it can be run locally or from a thumb drive.
+
+Freeplane offers several features including LaTex formulae in nodes, plugin extensions, toggling content, approximate search, classifying nodes with metadata, etc.
+
+9. MindMup
+
+MindMup is a free online mind mapping application where you can create, share, and publish unlimited mind maps without needing to create an account.
+  Wire Messaging Software Has Gone Open-Source Invites Devs to Contribute
+
+It offers free users storage space of up to 100KB for up to 6 months, support for saving mind maps in Google Drive, export maps of up to 100KB, publish maps for up to 6 months, and engage with the community chat and support. It has premium packages for users who want more functionality.
+
+10. Semantik
+
+Semantik (formely kdissert) is a mind mapping application for KDE that enables users to create different types of documents including presentations and reports. Semantik’s mind maps can be edited in 2D or as flat trees (a linear view on the left), with each node on the map associated with pictures, diagrams, tables, or text.
+
+Its other features include a simple and properly segmented UI, support for technical documentation in OpenOffice, HTML, and LaTeX formats, re-using diagrams, etc.
+Semantik
+
+Semantik
+11. Heimer
+
+Heimer is an uncomplicated free and open source designed for creating mind maps and similar diagrams. It features an easy-to-use UI, nice animations, an adjustable grid, export to PNG, unlimited undo/redo, save/load work in XML-based .ALZ files, different zoom modes (in/out/fit), etc.
+
+Heimer is the simplest mind mapping application on this list which makes it perfect for users who strictly need a mind mapping tool and nothing else.
+Heimer
+
+Heimer
+12. Dia
+
+Dia is a free and open source for drawing structured diagrams. It is available on Linux, macOS and Windows, and with it, you can create flowcharts and other complex diagrams with a simple user interface with a customizable grid, import/export functions, undo, redo, save, and zoom. If you’re familiar with GIMP and Inkscape then you will have a field day with Dia.
+
+There are other mind map software worthy of mention such as NovaMind, Bubbl, and XMind but they’re paid software because you wouldn’t get a complete feature list without paying for them and that’s a topic for a different day.
+
+Did I mention your favourite mind mapping app? Maybe you have some suggestions to include. Scroll on, the discussion section is below.
+Sharing is Caring...

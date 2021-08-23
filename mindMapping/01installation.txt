@@ -1,0 +1,11 @@
+$ sudo snap install freemind
+freemind 1.1.0-Beta-2 from Jean-Baptiste Lallement (jibel) installed
+
+$ sudo snap install xmind
+xmind 11.0.1 from XMind Ltd. (xmindltd) installed
+
+$ sudo snap install freeplane-mindmapping
+freeplane-mindmapping 1.9.4 from Jean-Baptiste Lallement (jibel) installed
+
+$ sudo snap install heimer
+heimer 2.6.0 from Jussi Lind installed
