@@ -1,0 +1,13 @@
+$ sudo add-apt-repository ppa:agornostal/ulauncher
+You are about to add the following PPA:
+ Application launcher for Linux
+ More info: https://launchpad.net/~agornostal/+archive/ubuntu/ulauncher
+Press Enter to continue or Ctrl+C to cancel
+
+Executing: /tmp/apt-key-gpghome.4uwUeIFGM9/gpg.1.sh --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 59EBDE772980C381CA13FA59FAF1020699503176
+gpg: key FAF1020699503176: public key "Launchpad PPA for Aleksandr Gornostal" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+
+$ sudo apt update
+$ sudo apt install ulauncher
